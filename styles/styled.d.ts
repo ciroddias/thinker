@@ -7,9 +7,12 @@ declare module "styled-components" {
     colors: {
       main: string;
       secondary: string;
-      text: string;
-      background: string;
-      card: string;
+      red: string;
+      yellow: "#FFBE0B";
+      "text-100": string;
+      "background-100": string;
+      "card-100": string;
+      "card-200": string;
     };
   }
 }

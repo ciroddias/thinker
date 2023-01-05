@@ -4,11 +4,14 @@ const light: DefaultTheme = {
   borderRadius: "10px",
 
   colors: {
-    main: "#9788E6",
+    main: "#3F88C5",
     secondary: "#73E670",
-    text: "#343434",
-    background: "#fff",
-    card: "#e8e8e8",
+    red: "#C33C54",
+    yellow: "#FFBE0B",
+    "text-100": "#292929",
+    "background-100": "#22222",
+    "card-100": "#D3D3D3",
+    "card-200": "#",
   },
 };
 
