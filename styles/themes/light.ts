@@ -5,13 +5,13 @@ const light: DefaultTheme = {
 
   colors: {
     main: "#3F88C5",
-    secondary: "#73E670",
+    secondary: "#EA7317",
     red: "#C33C54",
     yellow: "#FFBE0B",
-    "text-100": "#292929",
-    "background-100": "#22222",
-    "card-100": "#D3D3D3",
-    "card-200": "#",
+    "text-100": "#22222",
+    "background-100": "#E0E0E0",
+    "card-100": "#F7F7F7",
+    "card-200": "#FFF",
   },
 };
 

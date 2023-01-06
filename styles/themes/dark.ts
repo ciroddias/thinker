@@ -8,10 +8,10 @@ const dark: DefaultTheme = {
     secondary: "#EA7317",
     red: "#C33C54",
     yellow: "#FFBE0B",
-    "text-100": "#22222",
-    "background-100": "#292929",
-    "card-100": "#F7F7F7",
-    "card-200": "#D3D3D3",
+    "text-100": "#F7F7F7",
+    "background-100": "#222222",
+    "card-100": "#353535",
+    "card-200": "#252525",
   },
 };
 

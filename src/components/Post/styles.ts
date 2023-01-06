@@ -48,6 +48,7 @@ export const BestReplyLabel = styled.small`
 `;
 
 export const CommentField = styled.textarea`
+  background-color: ${({ theme }) => theme.colors["card-200"]};
   width: 100%;
   padding: 1rem;
   border: none;
