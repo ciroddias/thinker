@@ -10,10 +10,18 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background-color: ${({ theme }) => theme.colors["background-100"]};
         color: ${({ theme }) => theme.colors["text-100"]};
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Inter', sans-serif;
     }
 
     div {
         border-radius: 5px;
+    }
+
+    time {
+        font-size: .8rem;
+    }
+
+    a {
+        font-size: .8rem;
     }
 `;

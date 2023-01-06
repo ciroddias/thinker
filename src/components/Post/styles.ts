@@ -16,31 +16,35 @@ export const Content = styled.div`
   margin: 2rem 0;
 `;
 
-interface InteractionsProps {
+export const Interactions = styled.footer`
+  margin: 1rem 0;
+  display: flex;
+`;
+
+interface InterestedProps {
   interested: boolean;
 }
 
-export const Interactions = styled.footer<InteractionsProps>`
-  margin: 1rem 0;
+export const Interest = styled.a<InterestedProps>`
+  cursor: pointer;
+  color: ${({ interested, theme }) =>
+    interested ? theme.colors.secondary : ""};
+  margin-right: 1rem;
   display: flex;
-
-  a {
-    cursor: pointer;
-    color: ${({ interested, theme }) =>
-      interested ? theme.colors.secondary : ""};
-    margin-right: 1rem;
-    display: flex;
-    align-items: center;
-  }
-
-  p {
-    display: flex;
-    align-items: center;
-  }
+  align-items: center;
 
   svg {
     margin: 0 0.2rem;
   }
+`;
+
+export const Replies = styled.a`
+  display: flex;
+  align-items: center;
+`;
+
+export const BestReplyLabel = styled.small`
+  color: ${({ theme }) => theme.colors.main};
 `;
 
 export const CommentField = styled.textarea`

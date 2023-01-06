@@ -1,11 +1,17 @@
-import { CommentField, Container, Content, Interactions } from "./styles";
+import {
+  BestReplyLabel,
+  CommentField,
+  Container,
+  Content,
+  Interactions,
+  Interest as InterestStyles,
+  Replies,
+} from "./styles";
 import { Header } from "./styles";
 import { AiFillEye, AiOutlineComment } from "react-icons/ai";
 import { useTheme } from "styled-components";
 import { Comment as BestReply } from "../Comment";
 import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-dayjs.extend(relativeTime);
 
 interface PostProps {
   username: string;
@@ -35,20 +41,29 @@ function Post({
       <Content>
         <p>{text}</p>
       </Content>
-      <Interactions interested={interested}>
-        <a>
+      <Interactions>
+        <InterestStyles interested={interested}>
           <AiFillEye
             size={20}
             color={interested ? theme.colors.secondary : ""}
-          />{" "}
+          />
           {interest}
-        </a>
-        <p>
+        </InterestStyles>
+        <Replies>
           <AiOutlineComment size={20} />
           {replies}
-        </p>
+        </Replies>
       </Interactions>
-      <BestReply />
+      <BestReplyLabel>Best reply</BestReplyLabel>
+      <BestReply
+        username="Mary Stark"
+        createdAt={new Date("08/09/2022")}
+        text="I disagree"
+        agreed={true}
+        agree={2938}
+        deviated={true}
+        deviatedAmount={81}
+      />
       <CommentField placeholder="Please, keep the thread's topic" />
     </Container>
   );

@@ -4,6 +4,9 @@ import { dark } from "../styles/themes/dark";
 import { light } from "../styles/themes/light";
 import { GlobalStyle } from "../styles/global";
 import { Layout } from "../src/components/Layout";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+dayjs.extend(relativeTime);
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
