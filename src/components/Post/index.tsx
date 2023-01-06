@@ -12,6 +12,7 @@ import { AiFillEye, AiOutlineComment } from "react-icons/ai";
 import { useTheme } from "styled-components";
 import { Comment as BestReply } from "../Comment";
 import dayjs from "dayjs";
+import { IReplies } from "../../interfaces/IReplies";
 
 interface PostProps {
   username: string;
@@ -19,7 +20,7 @@ interface PostProps {
   createdAt: Date;
   interest: number;
   interested: boolean;
-  replies: number;
+  replies: IReplies[];
 }
 
 function Post({
@@ -51,14 +52,14 @@ function Post({
         </InterestStyles>
         <Replies>
           <AiOutlineComment size={20} />
-          {replies}
+          {replies.length}
         </Replies>
       </Interactions>
       <BestReplyLabel>Best reply</BestReplyLabel>
       <BestReply
-        username="Mary Stark"
+        username="Somebody"
         createdAt={new Date("08/09/2022")}
-        text="I disagree"
+        text="I agree"
         agreed={true}
         agree={2938}
         deviated={true}
