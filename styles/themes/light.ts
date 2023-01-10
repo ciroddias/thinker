@@ -13,6 +13,6 @@ const light: DefaultTheme = {
     "card-100": "#F7F7F7",
     "card-200": "#FFF",
   },
-};
+} as const;
 
 export { light };

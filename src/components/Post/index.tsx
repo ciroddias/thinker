@@ -56,15 +56,18 @@ function Post({
         </Replies>
       </Interactions>
       <BestReplyLabel>Best reply</BestReplyLabel>
-      <BestReply
-        username="Somebody"
-        createdAt={new Date("08/09/2022")}
-        text="I agree"
-        agreed={true}
-        agree={2938}
-        deviated={true}
-        deviatedAmount={81}
-      />
+      {replies.map((reply) => (
+        <BestReply
+          key={reply.id}
+          username={reply.user.username}
+          createdAt={reply.createdAt}
+          text={reply.text}
+          agreed={false}
+          agree={reply.agree}
+          deviated={false}
+          deviatedAmount={reply.deviated}
+        />
+      ))}
       <CommentField placeholder="Please, keep the thread's topic" />
     </Container>
   );

@@ -11,11 +11,11 @@ export function getPosts() {
         text: "Hello World",
         replies: [
           {
+            id: "1",
             user: {
               username: "Mary Stark",
             },
-
-            text: "",
+            text: "Hello!",
             agree: 4124,
             deviated: 12,
             createdAt: new Date("01/12/2021"),
@@ -32,6 +32,7 @@ export function getPosts() {
         text: "My first post",
         replies: [
           {
+            id: "2",
             user: {
               username: "John Smith",
             },
@@ -52,10 +53,10 @@ export function getPosts() {
         text: "Happy new year",
         replies: [
           {
+            id: "3",
             user: {
               username: "James Someoneson",
             },
-
             text: "Thanks!",
             agree: 1,
             deviated: 0,
@@ -73,10 +74,10 @@ export function getPosts() {
         text: "Hi!",
         replies: [
           {
+            id: "3",
             user: {
               username: "George Somebodyson",
             },
-
             text: "Hi, friend!",
             agree: 5125,
             deviated: 1,
@@ -94,10 +95,10 @@ export function getPosts() {
         text: "Hey!",
         replies: [
           {
+            id: "4",
             user: {
               username: "Paul Beetleson",
             },
-
             text: "Hi!",
             agree: 19283,
             deviated: 18273,
