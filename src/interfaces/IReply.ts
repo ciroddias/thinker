@@ -1,9 +1,10 @@
+import { IAgree } from "./IAgree";
 import { IUser } from "./IUser";
 
-export interface IReplies {
+export interface IReply {
   id: string;
   user: IUser;
-  agree: number;
+  agree: IAgree[];
   text: string;
   deviated: number;
   createdAt: Date;

@@ -12,15 +12,16 @@ import { AiFillEye, AiOutlineComment } from "react-icons/ai";
 import { useTheme } from "styled-components";
 import { Comment as BestReply } from "../Comment";
 import dayjs from "dayjs";
-import { IReplies } from "../../interfaces/IReplies";
+import { IReply } from "../../interfaces/IReply";
+import { IInterest } from "../../interfaces/IInterest";
 
 interface PostProps {
   username: string;
   text: string;
   createdAt: Date;
-  interest: number;
+  interest: IInterest[];
   interested: boolean;
-  replies: IReplies[];
+  replies: IReply[];
 }
 
 function Post({
@@ -48,7 +49,7 @@ function Post({
             size={20}
             color={interested ? theme.colors.secondary : ""}
           />
-          {interest}
+          {interest.length}
         </InterestStyles>
         <Replies>
           <AiOutlineComment size={20} />

@@ -9,13 +9,14 @@ import {
 } from "./styles";
 import { AiFillCheckCircle, AiOutlineBranches } from "react-icons/ai";
 import { useTheme } from "styled-components";
+import { IAgree } from "../../interfaces/IAgree";
 
 interface CommentProps {
   username: string;
   createdAt: Date;
   text: string;
   agreed: boolean;
-  agree: number;
+  agree: IAgree[];
   deviated: boolean;
   deviatedAmount: number;
 }
@@ -45,7 +46,7 @@ function Comment({
             size={15}
             color={agreed ? theme.colors.secondary : ""}
           />
-          {agree}
+          {agree.length}
         </Agreed>
         <Deviated deviated={deviated}>
           <AiOutlineBranches
