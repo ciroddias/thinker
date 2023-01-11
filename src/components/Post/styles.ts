@@ -5,6 +5,20 @@ export const Container = styled.article`
   margin: 1rem;
   padding: 1rem;
   border-radius: 5px;
+
+  .create-branch-label {
+    font-size: 0.8rem;
+    display: block;
+    margin: 1rem 0 0.5rem;
+  }
+
+  .open-discussion {
+    display: block;
+    margin: 1rem 0;
+    text-decoration: none;
+    width: fit-content;
+    color: ${({ theme }) => theme.colors.secondary};
+  }
 `;
 
 export const Header = styled.header`
@@ -47,14 +61,10 @@ export const BestReplyLabel = styled.small`
   color: ${({ theme }) => theme.colors.main};
 `;
 
-export const CommentField = styled.textarea`
+export const ArgumentField = styled.textarea`
   background-color: ${({ theme }) => theme.colors["card-200"]};
   width: 100%;
   padding: 1rem;
   border: none;
   border-radius: 5px;
-
-  :focus {
-    outline: 1px solid ${({ theme }) => theme.colors.secondary};
-  }
 `;

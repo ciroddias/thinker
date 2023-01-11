@@ -28,4 +28,10 @@ export const GlobalStyle = createGlobalStyle`
     a {
         font-size: .8rem;
     }
+
+    a, input, textarea {
+        :focus {
+        outline: 1px solid ${({ theme }) => theme.colors.secondary};
+      }
+    }
 `;

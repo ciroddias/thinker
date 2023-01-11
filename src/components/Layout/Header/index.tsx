@@ -16,7 +16,8 @@ function Header() {
         <input placeholder="Search topic" />
       </SearchBarWrapper>
       <NavWrapper>
-        <Link href="/home">Home</Link>
+        <Link href="/discussions">Discussions</Link>
+        <Link href="/">Home</Link>
         <Link href="/signup">Sair</Link>
       </NavWrapper>
     </Container>

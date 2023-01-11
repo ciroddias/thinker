@@ -12,7 +12,7 @@ const dark: DefaultTheme = {
     "background-100": "#222222",
     "card-100": "#353535",
     "card-200": "#252525",
-  },
-} as const;
+  } as const,
+};
 
 export { dark };

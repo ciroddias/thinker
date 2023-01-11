@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.header`
   display: flex;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.colors.main};
+  background-color: ${({ theme }) => theme.colors["background-100"]};
   padding: 0.5rem 1rem;
 `;
 
@@ -31,10 +31,6 @@ export const SearchBarWrapper = styled.div`
       margin-left: 0.5rem;
       border: none;
       height: 100%;
-
-      :focus {
-        outline: 1px solid ${({ theme }) => theme.colors.secondary};
-      }
     }
   }
 `;
@@ -48,9 +44,5 @@ export const NavWrapper = styled.nav`
     color: #fff;
     text-decoration: none;
     margin-left: 0.5rem;
-
-    :focus {
-      outline: 1px solid ${({ theme }) => theme.colors.secondary};
-    }
   }
 `;

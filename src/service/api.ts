@@ -9,6 +9,11 @@ export function getPosts() {
   return Posts;
 }
 
+export function getPost(id: string) {
+  setTimeout(() => {}, 3000);
+  return Posts.data.filter((post) => post.id === id);
+}
+
 export function getMyActivities() {
   setTimeout(() => {}, 2000);
   return Activities;

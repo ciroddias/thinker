@@ -31,6 +31,16 @@ export const Posts = {
           deviated: 12,
           createdAt: new Date("01/12/2021"),
         },
+        {
+          id: "2",
+          user: {
+            username: "Paul Beetleson",
+          },
+          text: "Hey!",
+          agree: [],
+          deviated: 0,
+          createdAt: new Date("01/05/2023"),
+        },
       ],
       interest: [
         {

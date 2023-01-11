@@ -1,6 +1,6 @@
 import {
   BestReplyLabel,
-  CommentField,
+  ArgumentField,
   Container,
   Content,
   Interactions,
@@ -10,12 +10,14 @@ import {
 import { Header } from "./styles";
 import { AiFillEye, AiOutlineComment } from "react-icons/ai";
 import { useTheme } from "styled-components";
-import { Comment as BestReply } from "../Comment";
+import { Argument as BestReply } from "../Argument";
 import dayjs from "dayjs";
 import { IReply } from "../../interfaces/IReply";
 import { IInterest } from "../../interfaces/IInterest";
+import Link from "next/link";
 
 interface PostProps {
+  id: string;
   username: string;
   text: string;
   createdAt: Date;
@@ -25,6 +27,7 @@ interface PostProps {
 }
 
 function Post({
+  id,
   username,
   text,
   createdAt,
@@ -57,19 +60,21 @@ function Post({
         </Replies>
       </Interactions>
       <BestReplyLabel>Best reply</BestReplyLabel>
-      {replies.map((reply) => (
-        <BestReply
-          key={reply.id}
-          username={reply.user.username}
-          createdAt={reply.createdAt}
-          text={reply.text}
-          agreed={false}
-          agree={reply.agree}
-          deviated={false}
-          deviatedAmount={reply.deviated}
-        />
-      ))}
-      <CommentField placeholder="Please, keep the thread's topic" />
+      <BestReply
+        key={replies[0].id}
+        username={replies[0].user.username}
+        createdAt={replies[0].createdAt}
+        text={replies[0].text}
+        agreed={false}
+        agree={replies[0].agree}
+        deviated={false}
+        deviatedAmount={replies[0].deviated}
+      />
+      <span className="create-branch-label">Create your branch:</span>
+      <ArgumentField placeholder="Please, keep the topic!" />
+      <Link className="open-discussion" href={`/discussions/${id}`}>
+        Open discussion
+      </Link>
     </Container>
   );
 }

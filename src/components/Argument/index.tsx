@@ -11,7 +11,7 @@ import { AiFillCheckCircle, AiOutlineBranches } from "react-icons/ai";
 import { useTheme } from "styled-components";
 import { IAgree } from "../../interfaces/IAgree";
 
-interface CommentProps {
+interface ArgumentProps {
   username: string;
   createdAt: Date;
   text: string;
@@ -21,7 +21,7 @@ interface CommentProps {
   deviatedAmount: number;
 }
 
-function Comment({
+function Argument({
   username,
   createdAt,
   text,
@@ -29,7 +29,7 @@ function Comment({
   agreed,
   deviated,
   deviatedAmount,
-}: CommentProps) {
+}: ArgumentProps) {
   const theme = useTheme();
   return (
     <Container>
@@ -60,4 +60,4 @@ function Comment({
   );
 }
 
-export { Comment };
+export { Argument };
