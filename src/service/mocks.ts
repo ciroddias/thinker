@@ -1,3 +1,8 @@
+export const LoginData = {
+  id: "1",
+  username: "John Smith",
+};
+
 export const Posts = {
   status: 200,
   data: [
@@ -44,7 +49,7 @@ export const Posts = {
       ],
       interest: [
         {
-          userId: "1",
+          userId: "4",
           createdAt: new Date(),
         },
         {
@@ -73,15 +78,15 @@ export const Posts = {
           text: "I agree",
           agree: [
             {
-              userId: "1",
-              createdAt: new Date(),
-            },
-            {
-              userId: "2",
+              userId: "5",
               createdAt: new Date(),
             },
             {
               userId: "3",
+              createdAt: new Date(),
+            },
+            {
+              userId: "2",
               createdAt: new Date(),
             },
           ],
@@ -91,7 +96,7 @@ export const Posts = {
       ],
       interest: [
         {
-          userId: "1",
+          userId: "5",
           createdAt: new Date(),
         },
         {
@@ -245,32 +250,6 @@ export const Posts = {
         },
       ],
       createdAt: new Date("20/04/2022"),
-    },
-  ],
-};
-
-export const Activities = {
-  status: 200,
-  data: [
-    {
-      postId: "5",
-      type: "interest",
-      date: new Date("02/12/2022"),
-    },
-    {
-      postId: "4",
-      type: "interest",
-      date: new Date("08/12/2022"),
-    },
-    {
-      postId: "2",
-      type: "interest",
-      date: new Date("01/11/2022"),
-    },
-    {
-      postId: "1",
-      type: "interest",
-      date: new Date("05/02/2022"),
     },
   ],
 };
