@@ -21,11 +21,15 @@ export default function Discution() {
   });
 
   useEffect(() => {
-    const postInfo = getPost(id as string)[0] as IPost;
-
-    setPost(postInfo);
+    fetchPostData();
     setLoading(false);
   }, [id]);
+
+  async function fetchPostData() {
+    const { status, post: postData } = await getPost(id as string);
+
+    if (status === 200) return setPost(postData);
+  }
 
   return (
     <Container>

@@ -8,13 +8,14 @@ export default function Discussion() {
   const { username, id } = { username: "John Smith", id: "1" };
 
   useEffect(() => {
-    const response = getPosts();
-
-    if (response.status === 200) {
-      const posts = response.data as unknown as IPost[];
-      setPosts(posts);
-    }
+    fetchPosts();
   }, []);
+
+  async function fetchPosts() {
+    const { status, posts } = await getPosts();
+
+    if (status === 200) return setPosts(posts);
+  }
 
   function liked(post: IPost) {
     return post.interest.some((user) => user.userId === id);

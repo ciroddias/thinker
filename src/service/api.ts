@@ -2,31 +2,22 @@ import { IAgree } from "../interfaces/IAgree";
 import { IInterest } from "../interfaces/IInterest";
 import { IPost } from "../interfaces/IPost";
 import { IReply } from "../interfaces/IReply";
-import { Posts } from "./mocks";
+const { get } = require("axios").default;
 
-export function getPosts() {
-  setTimeout(() => {}, 2000);
-  return Posts;
+export async function getPosts() {
+  const { status, data } = await get("/api/posts");
+  return { status, posts: data.posts };
 }
 
-export function getPost(id: string) {
-  setTimeout(() => {}, 3000);
-  return Posts.data.filter((post) => post.id === id);
+export async function getPost(id: string) {
+  const { status, data } = await get("/api/posts/" + id);
+  return { status, post: data.post };
 }
 
-export function createPost(post: IPost) {
-  setTimeout(() => {}, 2000);
-  Posts.data.push(post);
-}
+export function createPost(post: IPost) {}
 
-export function beInterested(interest: IInterest, postId: number) {
-  Posts.data[postId].interest.push(interest);
-}
+export function beInterested(interest: IInterest, postId: number) {}
 
-export function createReply(reply: IReply, postId: number) {
-  Posts.data[postId].replies.push(reply);
-}
+export function createReply(reply: IReply, postId: number) {}
 
-export function agree(agree: IAgree, postId: number, replyId: number) {
-  Posts.data[postId].replies[replyId].agree.push(agree);
-}
+export function agree(agree: IAgree, postId: number, replyId: number) {}
