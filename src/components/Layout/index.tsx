@@ -1,16 +1,20 @@
 import { Content } from "./styles";
 import { Header } from "./Header";
+import { useAuth } from "../../hooks/useAuth";
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 function Layout({ children }: LayoutProps) {
-  return (
+  const { auth } = useAuth();
+  return auth ? (
     <>
       <Header />
       <Content>{children}</Content>
     </>
+  ) : (
+    <>{children}</>
   );
 }
 
