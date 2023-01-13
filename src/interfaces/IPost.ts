@@ -1,12 +1,12 @@
 import { IInterest } from "./IInterest";
-import { IReply } from "./IReply";
+import { IArgument } from "./IArgument";
 import { IUser } from "./IUser";
 
 export interface IPost {
   id: string;
   user: IUser;
   text: string;
-  replies: IReply[];
+  replies: IArgument[];
   interest: IInterest[];
   createdAt: Date;
 }

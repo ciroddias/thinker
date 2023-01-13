@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { IPost } from "../../../src/interfaces/IPost";
-import { Posts } from "../mocks";
+import { Posts } from "../bd";
 
 type Data = {
   posts: IPost[];
