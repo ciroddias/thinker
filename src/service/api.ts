@@ -4,6 +4,16 @@ import { IPost } from "../interfaces/IPost";
 import { IArgument } from "../interfaces/IArgument";
 const api = require("axios").default;
 
+interface ISigninReq {
+  email: string;
+  password: string;
+}
+
+export async function signin({ email, password }: ISigninReq) {
+  const { status, data } = await api.post("api/signin", { email, password });
+  return { status, token: data.token };
+}
+
 export async function getPosts() {
   const { status, data } = await api.get("/api/posts");
   return { status, posts: data.posts };

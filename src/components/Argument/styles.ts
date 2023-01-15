@@ -4,10 +4,6 @@ export const Container = styled.div`
   border: solid 1px ${({ theme }) => theme.colors.main};
   margin: 0.1rem 0 0.9rem;
   padding: 1rem;
-
-  a {
-    cursor: pointer;
-  }
 `;
 
 export const Header = styled.header`

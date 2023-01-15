@@ -26,6 +26,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     a {
+        cursor: pointer;
         font-size: .8rem;
     }
 

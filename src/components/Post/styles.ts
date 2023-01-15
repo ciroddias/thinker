@@ -40,7 +40,6 @@ interface InterestedProps {
 }
 
 export const Interest = styled.a<InterestedProps>`
-  cursor: pointer;
   color: ${({ interested, theme }) =>
     interested ? theme.colors.secondary : ""};
   margin-right: 1rem;
