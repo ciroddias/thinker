@@ -1,4 +1,5 @@
 import { IPost } from "../../src/interfaces/IPost";
+import { IUser } from "./interfaces/IUser";
 
 export const LoginData = {
   id: "1",
@@ -230,3 +231,5 @@ export const Posts: IPost[] = [
     createdAt: new Date("20/04/2022"),
   },
 ];
+
+export const Users: IUser[] = [];

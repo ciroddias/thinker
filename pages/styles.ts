@@ -20,30 +20,15 @@ export const LoginCard = styled.form`
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
-  margin: 1rem;
+  margin: 1rem auto;
   border-radius: ${({ theme }) => theme.borderRadius};
-
-  input {
-    border: none;
-    background-color: ${({ theme }) => theme.colors["card-200"]};
-    padding: 1rem;
-    border-radius: ${({ theme }) => theme.borderRadius};
-  }
+  max-width: 20rem;
 `;
 
 export const Actions = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  button {
-    display: block;
-    border: none;
-    border-radius: ${({ theme }) => theme.borderRadius};
-    padding: 1rem 2rem;
-    background-color: ${({ theme }) => theme.colors.secondary};
-    color: ${({ theme }) => theme.colors["text-100"]};
-  }
 
   a {
     margin: 1rem auto;

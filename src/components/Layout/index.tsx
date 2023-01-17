@@ -7,8 +7,8 @@ interface LayoutProps {
 }
 
 function Layout({ children }: LayoutProps) {
-  const { auth } = useAuth();
-  return auth ? (
+  const { isAuthenticated } = useAuth();
+  return isAuthenticated ? (
     <>
       <Header />
       <Content>{children}</Content>

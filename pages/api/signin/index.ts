@@ -1,7 +1,27 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import bcrypt from "bcrypt";
+import jsonwebtoken from "jsonwebtoken";
+import { Users } from "../bd";
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { email, password } = req.body;
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const { username, password } = req.body;
+  const user = Users.find((user) => user.username === username);
+  const passwordMatch = await bcrypt.compare(
+    password,
+    user?.password as string
+  );
 
-  return res.status(200).json({ token: "" });
+  const accessToken = jsonwebtoken.sign(
+    { id: user?.id, username: user?.username },
+    process.env.JWT_AUTH_SECRET as string
+  );
+
+  if (passwordMatch) {
+    return res.status(200).json({
+      token: accessToken,
+    });
+  }
 }
