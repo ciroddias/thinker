@@ -1,10 +1,5 @@
-import { IPost } from "../../src/interfaces/IPost";
+import { IPost } from "../../../src/interfaces/IPost";
 import { IUser } from "./interfaces/IUser";
-
-export const LoginData = {
-  id: "1",
-  username: "John Smith",
-};
 
 export const Posts: IPost[] = [
   {

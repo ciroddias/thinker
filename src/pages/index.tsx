@@ -2,9 +2,10 @@ import { ChangeEvent, FormEvent } from "react";
 import { Inter } from "@next/font/google";
 import { useState } from "react";
 import { Actions, Container, LoginCard, Logo } from "./styles";
-import { signin } from "../src/service/api";
-import { useAuth } from "../src/hooks/useAuth";
+import { signin } from "../../src/service/api";
+import { useAuth } from "../../src/hooks/useAuth";
 import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,12 +27,18 @@ export default function Signin() {
 
   async function handleSignin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const response = await signin({
-      username: form.username,
-      password: form.password,
+    const { username, password } = form;
+    console.log({ username, password });
+    const { status, message } = await signin({
+      username,
+      password,
     });
 
-    if (response.status === 200) {
+    if (message) {
+      toast.error(message);
+    }
+
+    if (status === 200) {
       authenticate();
       router.push("/discussions");
     }
@@ -43,8 +50,8 @@ export default function Signin() {
       <LoginCard onSubmit={handleSignin}>
         <strong>Entrar</strong>
         <input
-          name="usermame"
-          placeholder="usermame"
+          name="username"
+          placeholder="username"
           onChange={handleInputChange}
         />
         <input
@@ -54,8 +61,11 @@ export default function Signin() {
           onChange={handleInputChange}
         />
         <Actions>
-          <button type="submit">Entrar</button>
-          <a>Esqueci a senha</a>
+          <button type="submit">Login</button>
+          <div>
+            <a>Forgot password</a>
+            <a onClick={() => router.push("/signup")}>Don't have account</a>
+          </div>
         </Actions>
       </LoginCard>
     </Container>

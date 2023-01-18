@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { IPost } from "../../src/interfaces/IPost";
-import { getPost } from "../../src/service/api";
+import { IPost } from "../../../src/interfaces/IPost";
+import { getPost } from "../../../src/service/api";
 import { Arguments, Container, Content, Header, Interactions } from "./styles";
 import dayjs from "dayjs";
-import { Argument } from "../../src/components/Argument";
+import { Argument } from "../../../src/components/Argument";
 import { AiFillEye } from "react-icons/ai";
 
 export default function Discution() {

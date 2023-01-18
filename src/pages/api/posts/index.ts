@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { IPost } from "../../../src/interfaces/IPost";
+import { IPost } from "../../../../src/interfaces/IPost";
 import { Posts } from "../bd";
 
 type Data = {

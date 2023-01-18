@@ -10,18 +10,28 @@ interface ISignupAndSigninReq {
 }
 
 export async function singnup({ username, password }: ISignupAndSigninReq) {
-  const { status, data } = await api.post("/api/signup", {
+  const { message, status } = await api.post("/api/signup", {
     username,
     password,
   });
+
+  if (message) {
+    return { status, message };
+  }
+
   return { status };
 }
 
 export async function signin({ username, password }: ISignupAndSigninReq) {
-  const { status, data } = await api.post("/api/signin", {
+  const { status, data, message } = await api.post("/api/signin", {
     username,
     password,
   });
+
+  if (message) {
+    return { status, message };
+  }
+
   return { status, token: data.token };
 }
 

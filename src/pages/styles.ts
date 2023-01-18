@@ -30,7 +30,12 @@ export const Actions = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+
   a {
-    margin: 1rem auto;
+    margin: 1rem 0;
   }
 `;

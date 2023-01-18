@@ -1,7 +1,7 @@
-import { Post } from "../../src/components/Post";
+import { Post } from "../../../src/components/Post";
 import { useEffect, useState } from "react";
-import { getPosts } from "../../src/service/api";
-import { IPost } from "../../src/interfaces/IPost";
+import { getPosts } from "../../../src/service/api";
+import { IPost } from "../../../src/interfaces/IPost";
 
 export default function Discussion() {
   const [posts, setPosts] = useState<IPost[]>([]);

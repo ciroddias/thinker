@@ -4,10 +4,12 @@ interface IAuthProvider {
   children: ReactNode;
 }
 
-export const AuthContext = React.createContext({
-  isAuthenticated: false,
-  authenticate: () => {},
-});
+interface IAuthContext {
+  isAuthenticated: boolean;
+  authenticate: () => void;
+}
+
+export const AuthContext = React.createContext({} as IAuthContext);
 
 export function AuthProvider({ children }: IAuthProvider) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

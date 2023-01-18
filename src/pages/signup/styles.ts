@@ -5,6 +5,12 @@ export const Container = styled.div`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+
+  text-align: center;
+
+  h1 {
+    margin: 1rem;
+  }
 `;
 
 export const Form = styled.form`

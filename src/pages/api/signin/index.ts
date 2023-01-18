@@ -9,6 +9,9 @@ export default async function handler(
 ) {
   const { username, password } = req.body;
   const user = Users.find((user) => user.username === username);
+
+  if (!user) return res.status(404).json({ message: "User not found!" });
+
   const passwordMatch = await bcrypt.compare(
     password,
     user?.password as string
