@@ -21,7 +21,6 @@ export default function Signup() {
   }
 
   async function handleSignup(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
     const { username, password, repeatPassword } = form;
 
     if (password !== repeatPassword) {
