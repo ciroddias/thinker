@@ -28,7 +28,7 @@ export default function Signin() {
   async function handleSignin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const { username, password } = form;
-    console.log({ username, password });
+
     const { status, message } = await signin({
       username,
       password,
