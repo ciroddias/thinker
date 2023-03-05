@@ -12,7 +12,7 @@ import { AiFillEye, AiOutlineComment } from "react-icons/ai";
 import { useTheme } from "styled-components";
 import { Argument as BestReply } from "../Argument";
 import dayjs from "dayjs";
-import { IReply } from "../../interfaces/IReply";
+import { IArgument } from "../../interfaces/IArgument";
 import { IInterest } from "../../interfaces/IInterest";
 import Link from "next/link";
 
@@ -23,7 +23,7 @@ interface PostProps {
   createdAt: Date;
   interest: IInterest[];
   interested: boolean;
-  replies: IReply[];
+  replies: IArgument[];
 }
 
 function Post({

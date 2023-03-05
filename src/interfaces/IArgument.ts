@@ -1,7 +1,7 @@
 import { IAgree } from "./IAgree";
 import { IUser } from "./IUser";
 
-export interface IReply {
+export interface IArgument {
   id: string;
   user: IUser;
   agree: IAgree[];

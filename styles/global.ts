@@ -26,7 +26,25 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     a {
+        cursor: pointer;
         font-size: .8rem;
+    }
+
+    input {
+        border: none;
+        background-color: ${({ theme }) => theme.colors["card-200"]};
+        padding: 1rem;
+        border-radius: ${({ theme }) => theme.borderRadius};
+        color: ${({ theme }) => theme.colors["text-100"]};
+    }
+
+    button {
+        display: block;
+        border: none;
+        border-radius: ${({ theme }) => theme.borderRadius};
+        padding: 1rem 2rem;
+        background-color: ${({ theme }) => theme.colors.secondary};
+        color: ${({ theme }) => theme.colors["text-100"]};
     }
 
     a, input, textarea {
